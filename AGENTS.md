@@ -13,15 +13,17 @@ Three deployment tiers, in build order:
 2. **Tier 2 — MicroVM/Container**: run the agent in isolation; monitor at the container boundary. Stronger isolation for setups that need hard containment.
 3. **Tier 3 — Kernel module**: EDR-style, system-wide. Strongest isolation, works for any process on the machine.
 
-## Read this before doing anything
+## Relevant project guidance
 
-1. **[`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md)** — mandatory first read. Architecture overview: hook → daemon → OPA flow, isolation tiers, policy model.
-2. **[`docs/ENGINEERING.md`](./docs/ENGINEERING.md)** — engineering principles that govern every change.
-3. **[`docs/adr/0001-os-sandbox-enforcement-layer.md`](./docs/adr/0001-os-sandbox-enforcement-layer.md)** — OS sandbox (agentjail-shield) decision.
-4. **[`docs/adr/0002-latency-as-engineering-metric.md`](./docs/adr/0002-latency-as-engineering-metric.md)** — latency targets.
-5. **[`docs/adr/0003-mcp-reverse-proxy.md`](./docs/adr/0003-mcp-reverse-proxy.md)** — MCP proxy strategy.
-6. **[`docs/adr/0004-credential-broker-tier1.md`](./docs/adr/0004-credential-broker-tier1.md)** — credential broker design (Tier 1.5 OSS path).
-7. **[`docs/adr/`](./docs/adr/)** — all ADRs. Each captures one decision with Context / Decision / Consequences.
+Before a non-trivial change, load the guidance relevant to the affected area. Small unrelated edits do not require reading the entire documentation tree.
+
+- [`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md) for hook → daemon → OPA flow, isolation tiers, and the policy model.
+- [`docs/ENGINEERING.md`](./docs/ENGINEERING.md) for engineering principles governing the change.
+- [`docs/adr/0001-os-sandbox-enforcement-layer.md`](./docs/adr/0001-os-sandbox-enforcement-layer.md) for OS sandbox (agentjail-shield) work.
+- [`docs/adr/0002-latency-as-engineering-metric.md`](./docs/adr/0002-latency-as-engineering-metric.md) for latency targets.
+- [`docs/adr/0003-mcp-reverse-proxy.md`](./docs/adr/0003-mcp-reverse-proxy.md) for MCP proxy changes.
+- [`docs/adr/0004-credential-broker-tier1.md`](./docs/adr/0004-credential-broker-tier1.md) for credential broker design (Tier 1.5 OSS path).
+- Other [`ADRs`](./docs/adr/) when their decisions affect the task; each records Context, Decision, and Consequences.
 
 ## Standard libraries — no hacky patterns
 
